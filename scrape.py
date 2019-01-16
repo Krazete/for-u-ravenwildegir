@@ -91,11 +91,3 @@ def parse_time(time):
                 ac += 12
             bc += 12
     return ac, bc
-
-if __name__ == '__main__':
-    from datetime import datetime, timedelta
-    now = datetime.utcnow() + timedelta(hours=-8)
-    scrape('Winter', now.year)
-    scrape('Spring', now.year)
-    scrape('Summer', now.year)
-    scrape('Fall', now.year)

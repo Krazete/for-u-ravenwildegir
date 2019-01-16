@@ -1,5 +1,17 @@
 cron:
-- description: scrape csulb soc
-  url: /scrape
-  schedule: every sunday 06:00
+- description: scrape winter
+  url: /scrape/term/Winter
+  schedule: every day 05:00
+  timezone: US/Pacific
+- description: scrape spring
+  url: /scrape/term/Spring
+  schedule: every day 05:20
+  timezone: US/Pacific
+- description: scrape summer
+  url: /scrape/term/Summer
+  schedule: every day 05:40
+  timezone: US/Pacific
+- description: scrape fall
+  url: /scrape/term/Fall
+  schedule: every day 06:00
   timezone: US/Pacific

@@ -18,8 +18,8 @@ def get_subjects(term, year):
     listItems = indexList.find_all('li')
     anchors = [li.find('a') for li in listItems]
     urls = [a.get('href') for a in anchors]
-    acros = [url.split('.')[0] for url in urls]
-    return acros
+    for url in urls:
+        yield url.split('.')[0]
 
 def get_soc(term, year, subject):
     url_template = 'http://web.csulb.edu/depts/enrollment/cgi-bin/soc_feed.pl?term={}&year={}&subject={}'
@@ -27,7 +27,6 @@ def get_soc(term, year, subject):
     request = urlfetch.fetch(url)
     soup = BeautifulSoup(request.content)
     tables = soup.find_all('table')
-    socs = []
     for table in tables:
         d, t, l = 0, 0, 0
         heads = table.find_all('th')
@@ -53,16 +52,13 @@ def get_soc(term, year, subject):
                         elif i == l - 1:
                             soc.setdefault('location', content)
                 if soc:
-                    socs.append(soc)
-    return socs
+                    yield soc
 
 def get_entire_soc(term, year):
-    socs = []
     try:
         subjects = get_subjects(term, year)
         for subject in subjects:
-            soc = get_soc(term, year, subject)
-            socs.extend(soc)
+            for soc in get_soc(term, year, subject):
+                yield soc
     except:
         pass
-    return socs

@@ -8,6 +8,13 @@ class Index(webapp2.RequestHandler):
         content = open('index.html').read()
         self.response.write(content)
 
+class Scrape(webapp2.RequestHandler):
+    def get(self, term):
+        from datetime import datetime, timedelta
+        from scrape import scrape
+        now = datetime.utcnow() + timedelta(hours=-8)
+        scrape(term, now.year)
+
 class Data(webapp2.RequestHandler):
     def post(self):
         self.response.headers['Content-Type'] = 'application/json'
@@ -24,6 +31,7 @@ class Data(webapp2.RequestHandler):
 
 sitemap = [
     ('/', Index),
+    ('/scrape/term/(\w+)', Scrape),
     ('/data.json', Data)
 ]
 

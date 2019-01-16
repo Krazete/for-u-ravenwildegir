@@ -10,6 +10,10 @@ It was made by the request of [u/ravenwildegir](https://www.reddit.com/r/UCI/com
 Thanks to the official [CSULB SoC API](http://wdc.csulb.edu/services/web/soc.html) and less arbitrary codes, the process for scraping data is much easier than it is with Antscoper.
 [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/) is used to gather data from the API and must be installed for this project's Python scripts to run.
 
+Unlike Antscoper, this app has four tables in its database for the Winter, Spring, Summer, and Fall terms.
+This is because there is not easy way to determine the current term.
+Instead, the user is asked what the current term is and the specified term database is loaded upon request.
+
 ## Map
 Unlike Antscoper, the map is simply an iframe element linked to CSULB's campus map page.
 The map does not interact with the legend at all, only serving as reference for building codes.
