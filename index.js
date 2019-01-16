@@ -1,3 +1,5 @@
+var today, database = {};
+
 function loadURL(method, url, encoding, parameters) {
     function request(resolve, reject) {
         var xhr = new XMLHttpRequest();
@@ -17,17 +19,25 @@ function loadURL(method, url, encoding, parameters) {
 }
 
 function init() {
+    var legend = document.getElementById("legend");
+    initLegend();
+
     var form = document.getElementById("form");
+    form.term.value = localStorage.getItem("term") || "Winter";
     form.addEventListener("submit", function (e) {
         e.preventDefault();
+        legend.classList.add("disabled");
         loadURL(
             form.method,
             form.action,
             form.encoding,
             "term=" + form.term.value
         ).then(function (response) {
-            var database = response;
-            console.log(database);
+            database = response;
+            initTimeline();
+        }).then(function () {
+            legend.classList.remove("disabled");
+            localStorage.setItem("term", form.term.value);
         });
     });
 }

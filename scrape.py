@@ -31,11 +31,10 @@ def scrape(term, year):
         time = parse_time(soc['time'])
         building, room = parse_location(soc['location'])
         database.setdefault(building, {})
-        database[building].setdefault(room, {})
-        database[building][room].setdefault('days', [[], [], [], [], [], [], []])
+        database[building].setdefault(room, [[], [], [], [], [], [], []])
         for i, day in enumerate(days):
             if day:
-                database[building][room]['days'][i].append(time)
+                database[building][room][i].append(time)
     for building in database:
         for room in database[building]:
             id = '-'.join([building, room])

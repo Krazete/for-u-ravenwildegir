@@ -1,40 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=0.75, maximum-scale=0.75, user-scalable=no">
 	<title>CSULB Vacancy Viewer</title>
     <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="legend.js"></script>
     <script src="index.js"></script>
 </head>
 <body>
-    <form action="data.json" method="post" id="form">
-        <label for="term">Term</label>
-        <select name="term">
-            <option value="Winter">Winter</option>
-            <option value="Spring">Spring</option>
-            <option value="Summer">Summer</option>
-            <option value="Fall">Fall</option>
-        </select>
-        <input type="submit" value="Submit">
-    </form>
-    <ul class="days">
-        <li data-day="0">Sunday</li>
-        <li data-day="1">Monday</li>
-        <li data-day="2">Tuesday</li>
-        <li data-day="3">Wednesday</li>
-        <li data-day="4">Thursday</li>
-        <li data-day="5">Friday</li>
-        <li data-day="6">Saturday</li>
-    </ul>
-
-    <table id="vacancies">
-        <thead>
-            <tr>
-                <th>Building</th>
-                <th colspan="999">Vacant Classes</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
+    <div id="map">
+        <iframe src="https://daf.csulb.edu/maps/parking/index.html#map"></iframe>
+    </div>
+    <div id="legend">
+        <div>
+            <a id="about" target="_blank" href="https://github.com/Krazete/for-u-ravenwildegir/blob/master/README.md">About</a>
+            <form action="data.json" method="post" id="form">
+                <select name="term">
+                    <option value="Winter">Winter</option>
+                    <option value="Spring">Spring</option>
+                    <option value="Summer">Summer</option>
+                    <option value="Fall">Fall</option>
+                </select>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <ul id="days">
+            <li data-day="0">Sunday</li>
+            <li data-day="1">Monday</li>
+            <li data-day="2">Tuesday</li>
+            <li data-day="3">Wednesday</li>
+            <li data-day="4">Thursday</li>
+            <li data-day="5">Friday</li>
+            <li data-day="6">Saturday</li>
+        </ul>
+        <div id="scanline"></div>
+        <div id="scroller"></div>
+    </div>
+    <style id="dynamic-style"></style>
 </body>
 </html>
