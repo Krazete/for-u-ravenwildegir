@@ -12,7 +12,7 @@
         <iframe src="https://daf.csulb.edu/maps/parking/index.html#map"></iframe>
     </div>
     <div id="legend">
-        <div>
+        <div class="scroller">
             <a id="about" target="_blank" href="https://github.com/Krazete/for-u-ravenwildegir/blob/master/README.md">About</a>
             <form action="data.json" method="post" id="form">
                 <select name="term">
@@ -24,7 +24,7 @@
                 <input type="submit" value="Submit">
             </form>
         </div>
-        <ul id="days">
+        <ul class="scroller" id="days">
             <li data-day="0">Sunday</li>
             <li data-day="1">Monday</li>
             <li data-day="2">Tuesday</li>
@@ -34,7 +34,7 @@
             <li data-day="6">Saturday</li>
         </ul>
         <div id="scanline"></div>
-        <div id="scroller"></div>
+        <div class="scroller" id="timelist"></div>
     </div>
     <style id="dynamic-style"></style>
 </body>

@@ -1,8 +1,8 @@
-var legend, scroller, dynamicStyle;
+var legend, timelist, dynamicStyle;
 
 function initLegend() {
     legend = document.getElementById("legend");
-    scroller = document.getElementById("scroller");
+    timelist = document.getElementById("timelist");
     dynamicStyle = document.getElementById("dynamic-style");
     initScanline();
     initDays();
@@ -115,11 +115,11 @@ function initTimeline() {
             timespan.style.width = (100 * (b - a) / 24) + "%";
         return timespan;
     }
-    scroller.innerHTML = "";
+    timelist.innerHTML = "";
     for (var building of sortKeys(database)) {
-        scroller.appendChild(newTimeheader(building));
-        scroller.appendChild(newTimetable(building, today));
+        timelist.appendChild(newTimeheader(building));
+        timelist.appendChild(newTimetable(building, today));
     }
     var time = getTime();
-    scroller.scrollTo((time - 1) * 1500/24, 0);
+    timelist.scrollTo((time - 1) * 1500/24, 0);
 }
