@@ -1,0 +1,5 @@
+cron:
+- description: scrape csulb soc
+  url: /scrape
+  schedule: every sunday 06:00
+  timezone: US/Pacific
