@@ -13,9 +13,14 @@
     </div>
     <div id="legend">
         <div class="scroller">
-            <a id="about" target="_blank" href="https://github.com/Krazete/for-u-ravenwildegir/blob/master/README.md">About</a>
+            |
+            <a target="_blank" href="https://github.com/Krazete/for-u-ravenwildegir/blob/master/README.md">About</a>
+            |
+            <a target="_blank" href="http://www.csulb.edu/classschedule">Official SoC</a>
+            |
             <form action="data.json" method="post" id="form">
-                <select name="term">
+                <label for="term">Term:</label>
+                <select name="term" id="term">
                     <option value="Winter">Winter</option>
                     <option value="Spring">Spring</option>
                     <option value="Summer">Summer</option>
@@ -23,6 +28,7 @@
                 </select>
                 <input type="submit" value="Submit">
             </form>
+            |
         </div>
         <ul class="scroller" id="days">
             <li data-day="0">Sunday</li>

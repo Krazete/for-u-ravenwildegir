@@ -11,6 +11,10 @@ html {
     background: black;
 }
 
+a, label {
+    color: var(--color-1)
+}
+
 #map {
 	position: absolute;
 	top: 0;
