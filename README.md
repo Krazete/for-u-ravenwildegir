@@ -11,7 +11,7 @@ Thanks to the official [CSULB SoC API](http://wdc.csulb.edu/services/web/soc.htm
 [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/) is used to gather data from the API and must be installed for this project's Python scripts to run.
 
 Unlike Antscoper, this app has four tables in its database for the Winter, Spring, Summer, and Fall terms.
-This is because there is not easy way to determine the current term.
+This is because there is no easy way to determine the current term.
 Instead, the user is asked what the current term is and the specified term database is loaded upon request.
 
 ## Map
