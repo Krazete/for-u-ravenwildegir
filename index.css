@@ -100,16 +100,6 @@ li:hover, li.selected {
     opacity: 1;
 }
 
-#scanline {
-    position: absolute;
-    width: 1px;
-    height: 100%;
-    background: gray;
-    background: var(--color-2);
-    pointer-events: none;
-    z-index: 1;
-}
-
 .scroller {
     overflow: scroll;
     -webkit-overflow-scrolling: touch; /* ios */

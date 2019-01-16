@@ -4,18 +4,8 @@ function initLegend() {
     legend = document.getElementById("legend");
     timelist = document.getElementById("timelist");
     dynamicStyle = document.getElementById("dynamic-style");
-    initScanline();
     initDays();
     initTime();
-}
-
-function initScanline() {
-    var scanline = document.getElementById("scanline");
-    function followMouse(e) {
-        var legendBox = legend.getBoundingClientRect();
-        scanline.style.left = (e.x - legendBox.x) + "px";
-    }
-    legend.addEventListener("mousemove", followMouse);
 }
 
 function initDays() {
