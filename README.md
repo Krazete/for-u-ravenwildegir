@@ -7,7 +7,8 @@ It was made by the request of [u/ravenwildegir](https://www.reddit.com/r/UCI/com
 <img src="sample.png">
 
 ## Database
-Thanks to the official [CSULB SoC API](http://wdc.csulb.edu/services/web/soc.html) and less arbitrary codes, the process for scraping data is much easier than it is with Antscoper.
+Thanks to the official [CSULB SoC API](http://wdc.csulb.edu/services/web/soc.html) and less arbitrary code values, the process for scraping data is a bit easier than it is with Antscoper.
+Unfortunately, the API seems a bit outdated and yields no results for Winter or Intersession courses.
 [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/) is used to gather data from the API and must be installed for this project's Python scripts to run.
 
 Unlike Antscoper, this app has four tables in its database for the Winter, Spring, Summer, and Fall terms.
